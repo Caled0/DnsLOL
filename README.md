@@ -66,6 +66,9 @@ To View:
 
 \c bf
 SELECT * FROM hosts;
+
+To Exit:
+\q;
 ```
 
 
