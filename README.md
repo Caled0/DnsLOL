@@ -21,7 +21,7 @@ client.py
 
 Sends hostname string to the server via conventional dns queries encoded to base64.
 
-NOTE: Takes a few minutes to send the data, console output will cease when fully sent.
+NOTE: Takes a few minutes to send the data, console output will cease when fully sent, change time.sleep if you want to speed up, although be carful as this is UDP and things can get out of sync.
 
 # Dependencies
 
