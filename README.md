@@ -21,6 +21,8 @@ client.py
 
 Sends hostname string to the server via conventional dns queries encoded to base64.
 
+NOTE: Takes a few minutes to send the data, console output will cease when fully sent.
+
 # Dependencies
 
 Under Ubuntu:
@@ -32,6 +34,38 @@ python-psycopg2
 
 client.py:
 python-nacl
+```
+
+# Postgres Setup
+temp/data is used for processing data
+bf/hosts is used for holding the results
+
+```
+sudo -u postgres psql
+ALTER USER postgres PASSWORD 'Nope';
+CREATE DATABASE bf;
+CREATE DATABASE temp;
+
+\c bf
+
+CREATE TABLE HOSTS(
+   HOST TEXT PRIMARY KEY  NOT NULL,
+   STAMP TIMESTAMP NOT NULL,
+   LASTCOM TIMESTAMP NULL
+);
+
+\c temp
+
+CREATE TABLE DATA(
+   HOST TEXT PRIMARY KEY  NOT NULL,
+   WHAT TEXT NULL
+);
+
+
+To View:
+
+\c bf
+SELECT * FROM hosts;
 ```
 
 
