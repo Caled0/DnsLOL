@@ -1,5 +1,4 @@
 # DnsLOL
-An alternative take on dns-exfil
 
 A dns-exfil "method" for use in networks that do not strictly enforce DNS server policy.
 
